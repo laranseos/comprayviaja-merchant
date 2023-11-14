@@ -46,8 +46,8 @@ const Sidebar = () => {
 
 
   return (
-    <>
-      <div className=' w-72 hidden sm:block duration-300 bg-gray-100 p-5 dark:bg-slate-900 h-screen' >
+    <div>
+      <div className=' w-72 h-[100%] hidden sm:block duration-300 bg-gray-100 p-5 dark:bg-slate-900' >
   
         <div >
           <div className="flex flex-col items-center">
@@ -159,7 +159,7 @@ const Sidebar = () => {
             </Link>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

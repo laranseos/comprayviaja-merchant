@@ -19,7 +19,6 @@ const Login = () => {
 
   const handleLoginClick = async (e) =>{
 		e.preventDefault();
-
 		if(!validateEmail(myemail)) {
 			setMynote('Invalid Email');
 			return;
@@ -31,15 +30,13 @@ const Login = () => {
 			const res = await login({ email, password }).unwrap();
 			dispatch(setCredentials({ ...res }));
 			console.log(res);
-			navigate('/dashboard');
+			navigate('/');
 			toast.success('Logged in Successfully!', {autoClose: 1000, hideProgressBar: true, pauseOnHover: false, closeOnClick: true, theme: "dark",});
 			closeSidebar();
 		  } catch (err) {
 			toast.error(err?.data?.message || err.error, {autoClose: 1000, hideProgressBar: true, pauseOnHover: false, closeOnClick: true, theme: "dark",});
 	    }
-	}
-
-  
+	  }
     const validateEmail = (email) => {
       // Check if the email is empty
       if (!email) {
@@ -51,18 +48,18 @@ const Login = () => {
     };
 
   return (
-    <div className="h-screen">
-      <div className="bg-white w-[500px] mx-auto my-auto mt-16 p-8">
+    <div>
+      <div className="bg-white sm:w-[500px] w-full mx-auto my-auto mt-16 p-8">
         <form onSubmit={handleLoginClick}>
           <p className="font-bold text-2xl font-sans">Log in to the Supplier Portal</p>
           <div className='flex flex-col font-bold py-2 mt-4'>
             <label>Email</label>
-            <input className={`rounded-md p-2 mt-2 font-semibold border border-slate-200 hover:border-blue-500 focus:border-blue-600 focus:outline-none ${mynote && 'border-red-500'}`} placeholder="Enter your email" value={myemail} onChange={(e) => { setMyemail(e.target.value); setMynote('');}} type="text" required/>
+            <input className={`rounded-md p-2 mt-2 font-semibold border border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none ${mynote && 'border-red-500'}`} placeholder="Enter your email" value={myemail} onChange={(e) => { setMyemail(e.target.value); setMynote('');}} type="text" required/>
           </div>
           {mynote && <div className=' text-red-600 text-sm font-semibold'>{mynote}</div>}
           <div className='flex flex-col font-bold py-2'>
             <label>Password</label>
-            <input className='rounded-md p-2 mt-2 font-semibold border border-slate-200 hover:border-blue-500 focus:border-blue-600 focus:outline-none' placeholder="Enter your password" value={mypassword} onChange={(e) => setMypassword(e.target.value)} type="password" required/>
+            <input className='rounded-md p-2 mt-2 font-semibold border border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none' placeholder="Enter your password" value={mypassword} onChange={(e) => setMypassword(e.target.value)} type="password" required/>
           </div>
           <div className='flex justify-between text-gray-400'>
             <a className='text-blue-600 font-semibold cursor-pointer' onClick={()=>setForgot(true)}>Forgot Password?</a>
@@ -73,7 +70,6 @@ const Login = () => {
             <a className='cursor-pointer text-blue-600' href="/register">Sign up now</a>
           </div>
         </form>
-            
       </div>
     </div>
 

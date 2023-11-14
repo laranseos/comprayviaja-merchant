@@ -6,7 +6,7 @@ const AuthRoute = () => {
   const { userInfo } = useSelector((state) => state.auth);
 
   if (userInfo) {
-    return <Navigate to="/dashboard" replace />;
+    return <Navigate to="/product-manage" replace />;
   } else return <Outlet />;
 
 };

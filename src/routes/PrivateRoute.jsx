@@ -31,7 +31,16 @@ const PrivateRoute = () => {
 
   if (!userInfo) {
     return <Navigate to="/" replace />;
-  } else return <Outlet />;
+  } else {
+    return (
+      <div className='w-full lg:w-[1280px] mx-auto overflow-hidden'>
+        <div className='w-full'>
+            <div><Outlet /></div>
+        </div>
+      </div>
+
+    );
+  }
 
 };
 

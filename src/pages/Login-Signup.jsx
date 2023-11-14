@@ -323,12 +323,12 @@ const Login_Signup = () => {
 								<h2 className='text-4xl dark:text-white font-bold text-center'>LOG IN</h2>
 								<div className='flex flex-col text-gray-400 py-2'>
 									<label>Email</label>
-									<input className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' value={myemail} onChange={(e) => { setMyemail(e.target.value); setMynote('');}} type="text" required/>
+									<input className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-600 focus:bg-gray-800 focus:outline-none' value={myemail} onChange={(e) => { setMyemail(e.target.value); setMynote('');}} type="text" required/>
 								</div>
 								{mynote && <div className=' text-red-300 text-sm'>{mynote}</div>}
 								<div className='flex flex-col text-gray-400 py-2'>
 									<label>Password</label>
-									<input className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' value={mypassword} onChange={(e) => setMypassword(e.target.value)} type="password" required/>
+									<input className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-600 focus:bg-gray-800 focus:outline-none' value={mypassword} onChange={(e) => setMypassword(e.target.value)} type="password" required/>
 								</div>
 								<div className='flex justify-between text-gray-400 py-2'>
 									<p className='flex items-center'><input className='mr-2' type="checkbox" checked={rememberMe} onChange={handleCheckboxChange} /> Remember Me</p>
@@ -345,12 +345,12 @@ const Login_Signup = () => {
 								<h2 className='text-4xl dark:text-white font-bold text-center'>SIGN UP</h2>
 								<div className='flex flex-col text-gray-400 py-2'>
 									<label>User Name</label>
-									<input className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' value={username} onChange={(e)=>setUsername(e.target.value)} type="text" required/>
+									<input className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-600 focus:bg-gray-800 focus:outline-none' value={username} onChange={(e)=>setUsername(e.target.value)} type="text" required/>
 								</div>
 								<div className='flex flex-col text-gray-400 py-2'>
 									<label>Email</label>
 									<div className='grid grid-cols-6'>
-										<input className='rounded-lg col-span-5 bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' value={email} onChange={(e) => {setEmail(e.target.value); setNote(''); setCode('');}} type="text" required/>
+										<input className='rounded-lg col-span-5 bg-gray-700 mt-2 p-2 focus:border-blue-600 focus:bg-gray-800 focus:outline-none' value={email} onChange={(e) => {setEmail(e.target.value); setNote(''); setCode('');}} type="text" required/>
 										<a className='ml-2 cursor-pointer hover:text-white' onClick={handleSendCodeClick}>send code</a>
 									</div>
 									{(note.includes('Invalid email')) && <div className=' text-red-300 text-sm'>{note}</div>}
@@ -361,21 +361,21 @@ const Login_Signup = () => {
 								{(validateEmail(email)&&note&&note.includes('Sent verification code to')) &&
 								<div className='flex flex-col text-gray-400 py-2'>
 									<label>Verification Code</label>
-									<input className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' value={code} onChange={handleCodeChange} type="text" required/>
+									<input className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-600 focus:bg-gray-800 focus:outline-none' value={code} onChange={handleCodeChange} type="text" required/>
 								</div>
 								}
 								<div className='flex flex-col text-gray-400 py-2'>
 									<label>Password</label>
-									<input className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' value={password} onChange={(e)=>setPassword(e.target.value)} type="password" required/>
+									<input className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-600 focus:bg-gray-800 focus:outline-none' value={password} onChange={(e)=>setPassword(e.target.value)} type="password" required/>
 								</div>
 								{password && <div className=' text-red-300 text-sm'>{passnote}</div>}
 								<div className='flex flex-col text-gray-400 py-2'>
 									<label>Confirm Password</label>
-									<input className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' value={confirm_password} onChange={(e)=>setPassConfirm(e.target.value)} type="password" required/>
+									<input className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-600 focus:bg-gray-800 focus:outline-none' value={confirm_password} onChange={(e)=>setPassConfirm(e.target.value)} type="password" required/>
 								</div>
 								<div className='flex flex-col text-gray-400 py-2'>
 									<label>Referral Code (Optional)</label>
-									<input className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' value={referral_link} onChange={(e)=>setReferalLink(e.target.value)} type="text" />
+									<input className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-600 focus:bg-gray-800 focus:outline-none' value={referral_link} onChange={(e)=>setReferalLink(e.target.value)} type="text" />
 								</div>
 								<button className='py-2 px-6 font-poppins font-medium text-[18px] text-primary bg-blue-gradient rounded-[10px] outline-none mt-6 w-full hover:shadow-sm hover:shadow-white active:translate-y-1'>Sign Up</button>
 								<div className='flex justify-between text-gray-400 py-2 mt-4'>
@@ -389,7 +389,7 @@ const Login_Signup = () => {
 								<div className='flex flex-col text-gray-400 py-2 mt-4'>
 									<label>Your Email</label>
 									<div className='grid grid-cols-6'>
-										<input className='rounded-lg col-span-5 bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' value={forgot_email} onChange={(e)=>{setForgotEmail(e.target.value);setForgotNote('');setForgotCode('');}} type="text" required/>
+										<input className='rounded-lg col-span-5 bg-gray-700 mt-2 p-2 focus:border-blue-600 focus:bg-gray-800 focus:outline-none' value={forgot_email} onChange={(e)=>{setForgotEmail(e.target.value);setForgotNote('');setForgotCode('');}} type="text" required/>
 										<a className='ml-2 cursor-pointer hover:text-white' onClick={handleForgotSendCodeClick}>Send code</a>
 									</div>
 									{(forgot_note.includes('Invalid')) && <div className=' text-red-300 text-md'>{forgot_note}</div>}
@@ -400,17 +400,17 @@ const Login_Signup = () => {
 								{(validateEmail(forgot_email)&&forgot_note) &&
 								<div className='flex flex-col text-gray-400 py-2'>
 									<label>Verification Code</label>
-									<input className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' value={forgot_code} onChange={handleForgotCodeChange} type="text" required/>
+									<input className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-600 focus:bg-gray-800 focus:outline-none' value={forgot_code} onChange={handleForgotCodeChange} type="text" required/>
 								</div>
 								}
 								<div className='flex flex-col text-gray-400 py-2'>
 									<label>New Password</label>
-									<input className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' value={forgot_password} onChange={(e)=>setForgotPassword(e.target.value)} type="password" required/>
+									<input className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-600 focus:bg-gray-800 focus:outline-none' value={forgot_password} onChange={(e)=>setForgotPassword(e.target.value)} type="password" required/>
 								</div>
 								{forgot_password && <div className=' text-red-300 text-sm'>{forgot_passnote}</div>}
 								<div className='flex flex-col text-gray-400 py-2'>
 									<label>Confirm Password</label>
-									<input className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' value={forgot_confirm_password} onChange={(e)=>setForgotPassConfirm(e.target.value)} type="password" required/>
+									<input className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-600 focus:bg-gray-800 focus:outline-none' value={forgot_confirm_password} onChange={(e)=>setForgotPassConfirm(e.target.value)} type="password" required/>
 								</div>
 								<button className='py-2 px-6 font-poppins font-medium text-[18px] text-primary bg-blue-gradient rounded-[10px] outline-none mt-6 w-full hover:shadow-sm hover:shadow-white active:translate-y-1'>Reset Password</button>
 								<div className='flex justify-between text-gray-400 py-2 mt-4 '>

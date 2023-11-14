@@ -1,22 +1,20 @@
-import React, { useId } from 'react'
-import Navbar from '../Navbar'
-import Sidebar from './Sidebar'
+import React from 'react'
+import Navbar from './Navbar'
 import { Outlet } from 'react-router-dom'
-import Background from './Background'
-import { useSelector } from 'react-redux'
+
 const Layout = () => {
 
     return (
-        <Background>
+        <div className=' flex-1 flex-col'>
             <Navbar />
             <div className='mx-auto w-full overflow-auto'>
                 <div className='flex'>
-                    <div className='w-full '>
+                    <div className='w-full'>
                         <div><Outlet /></div>
                     </div>
                 </div>
             </div>
-        </Background>
+        </div>
     )
 }
 

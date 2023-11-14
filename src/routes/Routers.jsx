@@ -1,16 +1,15 @@
-import { Route, Routes} from 'react-router-dom';
+import { Route, Routes, Navigate} from 'react-router-dom';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import PrivateRoute from './PrivateRoute';
 import AuthRoute from './AuthRoute';
-import Dashboard from '../pages/user/Dashboard';
-import Layout from '../components/user/Layout';
-import Cycle from '../pages/user/Cycle';
-import Wallet from '../pages/user/Wallet';
-import Profile from '../pages/user/Profile';
+import Layout from '../layout/Layout';
 import ErrorPage from '../pages/error-page';
 import Landing from '../pages/Landing';
-
+import Category from '../pages/product-create/Category';
+import Title from '../pages/product-create/Title';
+import ProductManage from '../pages/ProductManage';
+import ProductRoute from './ProductRoute';
 const Routers = () => {
 
   return (
@@ -22,11 +21,13 @@ const Routers = () => {
             <Route path='/' element={<Landing />} errorElement={<ErrorPage/>} />
           </Route>
           <Route element={<PrivateRoute/>}>
-            <Route path='/dashboard' element={<Dashboard />} />
-            <Route path='/cycle' element={<Cycle />} />
-            <Route path='/profile' element={<Profile />} />
-            <Route path='/wallet' element={<Wallet />} />
+            <Route element={<ProductRoute />}>
+              <Route path='/product-create/category' element={<Category />} />
+              <Route path='/product-create/title' element={<Title />} />
+            </Route>
+            <Route path='/product-manage' element={<ProductManage />} />
           </Route>
+          <Route path='*' element={<Navigate to="/" />} />
         </Route>
       </Routes>
   );
