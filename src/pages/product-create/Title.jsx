@@ -40,9 +40,9 @@ const Title = () => {
         </div>
       </div>
       <input className="rounded-md mt-4 p-3 font-semibold border-2 border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none w-full sm:w-2/3" placeholder="Title " value={title} onChange={(e) => { setTitle(e.target.value);}} type="text" required/>
-      <div>
-        <button className="default-button my-8 float-right">Continue</button> 
-        <button className="outline-button my-8 float-right mr-4">Save & Exit</button>
+      <div className="flex justify-end">
+        <button className="outline-button my-8 mr-4">Save & Exit</button> 
+        <button className="default-button my-8">Continue</button>
       </div>
     </div>
   );
