@@ -2,7 +2,7 @@
 const ProductManage = () => {
 
   return (
-    <div className=" w-full p-8 h-screen">
+    <div className=" w-full p-8">
         Hello world!
     </div>
   );

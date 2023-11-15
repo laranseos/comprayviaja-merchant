@@ -8,6 +8,12 @@ const CategorySidebar = () => {
   const Menus = [
     { title: 'Product Category', path: '/product-create/category' },
     { title: 'Title', path: '/product-create/title' },
+    { title: 'Descriptions & highlights', path: '/product-create/descriptions' },
+    { title: 'Location', path: '/product-create/location' },
+    { title: 'Keywords', path: '/product-create/keywords' },
+    { title: 'Inclusions & Exclusions', path: '/product-create/inclusions' },
+
+
   ]
 
   return (

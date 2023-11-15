@@ -14,12 +14,14 @@ const Category = () => {
     console.log('Selected value:', category);
   };
 
+
+
   return (
       <div className=" w-full p-4 sm:p-16 h-[75vh]">
          <form onSubmit={handleSubmit}>
             <h1 className="text-4xl font-bold">Create a new product</h1>
-            <h2 className="mt-8 font-semibold">Which best describes your activity?</h2>
-            <p>This helps us categorize your product so customers can find it.</p>
+            <h2 className="mt-8 font-bold">Which best describes your activity?</h2>
+            <p className="font-semibold">This helps us categorize your product so customers can find it.</p>
             <div
               className={`mt-8 p-8 cursor-pointer ${category === 'attraction' ? 'bg-slate-300' : 'bg-slate-200'} 
               ${category === 'attraction' && 'hover:bg-slate-300'}`}

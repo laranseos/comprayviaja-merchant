@@ -10,6 +10,10 @@ import Category from '../pages/product-create/Category';
 import Title from '../pages/product-create/Title';
 import ProductManage from '../pages/ProductManage';
 import ProductRoute from './ProductRoute';
+import Descriptions from '../pages/product-create/Descriptions';
+import Location from '../pages/product-create/Location';
+import Keywords from '../pages/product-create/Keywords';
+import Inclusions from '../pages/product-create/Inclusions';
 const Routers = () => {
 
   return (
@@ -24,6 +28,10 @@ const Routers = () => {
             <Route element={<ProductRoute />}>
               <Route path='/product-create/category' element={<Category />} />
               <Route path='/product-create/title' element={<Title />} />
+              <Route path='/product-create/descriptions' element={<Descriptions />} />
+              <Route path='/product-create/location' element={<Location />} />
+              <Route path='/product-create/keywords' element={<Keywords />} />
+              <Route path='/product-create/inclusions' element={<Inclusions />} />
             </Route>
             <Route path='/product-manage' element={<ProductManage />} />
           </Route>
