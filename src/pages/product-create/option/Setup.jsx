@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import IconTick from "../../components/icons/IconTick";
-import IconCross1 from "../../components/icons/IconCross1";
+import IconTick from "../../../components/icons/IconTick";
+import IconCross1 from "../../../components/icons/IconCross1";
+import { useContext } from "react";
+import { OptionContext } from "../../../context/optionContext";
 
-const Title = () => {
+const Setup = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const {dispatch} = useContext(OptionContext);
   const [title, setTitle] = useState('');
   const [packages, setPackages] = useState({
     category : location.state,
@@ -22,7 +25,7 @@ const Title = () => {
     // Perform any necessary form validation or submission logic here
 
     // Redirect to the desired page after form submission
-    navigate('/product-create/descriptions');
+    navigate('/product-create/option/pickup');
   };
 
     
@@ -36,6 +39,11 @@ const Title = () => {
   const handleReferenceCode= (event) => {
     const length = event.target.value.length;
     setReferenceCode(20 - length);
+  }
+
+  const handleSave = () => {
+    dispatch({type:"SET_OPTION", payload:false});
+    navigate('/product-create/options');
   }
 
   return (
@@ -75,7 +83,7 @@ const Title = () => {
         <p className="mb-4 text-sm">{referenceCode} characters left</p>
         
         <div className="flex justify-end">
-          <button  className="outline-button my-8 mr-4" onClick={()=>navigate('/product-manage')}>Save & Exit</button> 
+          <button  className="outline-button my-8 mr-4" onClick={handleSave}>Save & Exit</button> 
           <button type="submit" className="default-button bg-blue-600 my-8">Continue</button>
         </div>
       </form>
@@ -83,4 +91,4 @@ const Title = () => {
   );
 };
 
-export default Title;
+export default Setup;

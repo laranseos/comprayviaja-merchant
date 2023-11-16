@@ -9,8 +9,12 @@ import IconMenu from '../components/icons/IconMenu';
 import IconUser5Line from '../components/icons/IconUser5Line';
 import IconClose from '../components/icons/IconClose';
 
+import { useContext } from "react";
+import { OptionContext } from '../context/optionContext';
+
 const Navbar = () => {
 
+  // const {option} = useContext(OptionContext);
   const [toggle, setToggle] = useState(false);
   const [toggleProduct, setToggleProduct] = useState(false);
   const [toggleManage, setToggleManage] = useState(false);
@@ -66,7 +70,9 @@ const Navbar = () => {
   }, []);
 
   const handleCreate = () => {
+    // dispatch({type:"SET_OPTION", payload:false});
     navigate('/product-create/category');
+    
     setToggleProduct(true); 
     setToggleManage(false);
   }

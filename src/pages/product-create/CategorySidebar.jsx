@@ -21,6 +21,7 @@ const CategorySidebar = () => {
       { title: 'Additional Information', path: '/product-create/addinfo', isCheck: isTitle },
       { title: 'Photos', path: '/product-create/photos', isCheck: isTitle },
       { title: 'Options', path: '/product-create/options', isCheck: isTitle },
+      { title: 'Review', path: '/product-create/reviews', isCheck: isTitle },
     ];
     setMenus(updatedMenus);
   }, [isTitle]);

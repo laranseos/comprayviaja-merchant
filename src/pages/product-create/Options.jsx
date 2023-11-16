@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import IconTick from "../../components/icons/IconTick";
-import IconCross1 from "../../components/icons/IconCross1";
+import { OptionContext } from "../../context/optionContext";
 
 const Options = () => {
+
+  const {dispatch} = useContext(OptionContext);
+
   const location = useLocation();
   const navigate = useNavigate();
   const [title, setTitle] = useState('');
@@ -18,12 +20,15 @@ const Options = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     // Perform any necessary form validation or submission logic here
-
     // Redirect to the desired page after form submission
-    navigate('/product-create/descriptions');
+    navigate('/product-create/reviews');
   };
+
+  const handleNewOption = () =>{
+    dispatch({type:"SET_OPTION", payload:true});
+    navigate('/product-create/option/setup');
+  }
 
     
   const [shortCharacters, setShortCharacters] = useState(60);
@@ -47,7 +52,7 @@ const Options = () => {
         <h2 className="mt-4 font-semibold mb-2">You’ll always need to create at least one “default” option for new activities. However, you only create multiple options only if your activity can be booked with tailored differences.</h2>
         
         <div className="flex justify-between">
-          <button  className="outline-button my-8 mr-4" onClick={()=>navigate('/product-manage')}>Create new option</button> 
+          <button  className="outline-button my-8 mr-4" onClick={handleNewOption}>Create new option</button> 
           <button type="submit" className="default-button bg-blue-600 my-8">Continue</button>
         </div>
       </form>

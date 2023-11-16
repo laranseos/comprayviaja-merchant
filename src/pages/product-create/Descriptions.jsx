@@ -56,7 +56,7 @@ const Descriptions = () => {
   return (
     <div className=" w-full p-4 sm:p-16">
       <form onSubmit={handleSubmit}>
-        <h1 className="text-4xl font-bold">Descriptions & highlights</h1>
+        <h1 className="text-4xl font-bold py-4">Descriptions & highlights</h1>
         <div className="py-2 font-medium">
           <p>This is the main information that customers will use on your activity details page to read, compare, and book an activity.</p>
           <p>• Write all information below in English</p>

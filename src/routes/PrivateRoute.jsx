@@ -5,6 +5,8 @@ import { setCredentials, logout } from '../slices/authSlice';
 
 import axios from 'axios';
 
+import { OptionProvider } from '../context/optionContext';
+
 const PrivateRoute = () => {
   
   const { userInfo } = useSelector((state) => state.auth);
@@ -33,11 +35,13 @@ const PrivateRoute = () => {
     return <Navigate to="/" replace />;
   } else {
     return (
-      <div className='w-full lg:w-[1280px] mx-auto overflow-hidden'>
-        <div className='w-full'>
-            <div><Outlet /></div>
+      <OptionProvider>
+        <div className='w-full lg:w-[1280px] mx-auto overflow-hidden'>
+          <div className='w-full'>
+              <div><Outlet /></div>
+          </div>
         </div>
-      </div>
+      </OptionProvider>
 
     );
   }

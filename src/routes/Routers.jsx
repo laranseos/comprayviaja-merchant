@@ -1,6 +1,7 @@
 import { Route, Routes, Navigate} from 'react-router-dom';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
+
 import PrivateRoute from './PrivateRoute';
 import AuthRoute from './AuthRoute';
 import Layout from '../layout/Layout';
@@ -9,6 +10,7 @@ import Category from '../pages/product-create/Category';
 import Title from '../pages/product-create/Title';
 import ProductManage from '../pages/ProductManage';
 import ProductRoute from './ProductRoute';
+
 import Descriptions from '../pages/product-create/Descriptions';
 import Location from '../pages/product-create/Location';
 import Keywords from '../pages/product-create/Keywords';
@@ -17,6 +19,12 @@ import GuideInfo from '../pages/product-create/GuideInfo';
 import AddInfo from '../pages/product-create/AddInfo';
 import Photos from '../pages/product-create/Photos';
 import Options from '../pages/product-create/Options';
+import Reviews from '../pages/product-create/Reviews';
+
+import Setup from '../pages/product-create/option/Setup';
+import Pickup from '../pages/product-create/option/Pickup';
+import Pricing from '../pages/product-create/option/Pricing';
+import Review from '../pages/product-create/option/Review';
 
 const Routers = () => {
 
@@ -40,10 +48,16 @@ const Routers = () => {
               <Route path='/product-create/addinfo' element={<AddInfo />} />
               <Route path='/product-create/photos' element={<Photos />} />
               <Route path='/product-create/options' element={<Options />} />
+              <Route path='/product-create/reviews' element={<Reviews />} />
+              
+              <Route path='/product-create/option/setup' element={<Setup />} />
+              <Route path='/product-create/option/pickup' element={<Pickup />} />
+              <Route path='/product-create/option/pricing' element={<Pricing />} />
+              <Route path='/product-create/option/review' element={<Review />} />
             </Route>
             <Route path='/product-manage' element={<ProductManage />} />
           </Route>
-          <Route path='*' element={<Navigate to="/" />} />
+          {/* <Route path='*' element={<Navigate to="/" />} /> */}
         </Route>
       </Routes>
   );
