@@ -56,11 +56,11 @@ const Signup = () => {
 		try {	
       const res = await register({legalName, weblink, firstName, lastName, email, password, code }).unwrap();
       console.log(res);
-			toast.success('Registered Successfully!', {autoClose: 1000, hideProgressBar: true, pauseOnHover: false, closeOnClick: true, theme: "dark",});
+			toast.success('Registered Successfully!', {autoClose: 1000, hideProgressBar: true, pauseOnHover: false, closeOnClick: true});
 			// dispatch(setCredentials({ ...res }));
 			navigate('/');
     	} catch (err) {
-			toast.error(err?.data?.message || err.error, {autoClose: 1000, hideProgressBar: true, pauseOnHover: false, closeOnClick: true, theme: "dark",});
+			toast.error(err?.data?.message || err.error, {autoClose: 1000, hideProgressBar: true, pauseOnHover: false, closeOnClick: true});
 	    }
 
 	}
@@ -73,7 +73,7 @@ const Signup = () => {
 				setCodeNote(`Sent verification code to ${email}`);
 			})
 			.catch(err => {
-				toast(err.response.data.message, {autoClose: 3000, theme: "dark",});
+				toast(err.response.data.message, {autoClose: 3000});
 			});
 
 		} else {
@@ -142,23 +142,23 @@ const Signup = () => {
         <p className="font-bold text-2xl font-sans">Join us as a supply partner</p>
         <div className='flex flex-col font-semibold py-2 mt-4 space-y-2'>
           <label>Legal Name</label>
-          <input className="rounded-md p-3 font-semibold border-2 border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none" placeholder="Acme GmbH" value={legalName} onChange={(e) => { setLegalName(e.target.value);}} type="text" required/>
+          <input className="rounded-md p-3 font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none" placeholder="Acme GmbH" value={legalName} onChange={(e) => { setLegalName(e.target.value);}} type="text" required/>
           <p className="text-slate-500 text-sm font-poppins">Your public or brand name can be added later</p>
         </div>
 
         <div className='flex flex-col font-semibold py-2 mt-4 space-y-2'>
           <label>Add Website link</label>
-          <input className="rounded-md p-3 font-semibold border-2 border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none" placeholder="http(s)://www.website.com/" value={weblink} onChange={(e) => { setWeblink(e.target.value);}} type="text" required/>
+          <input className="rounded-md p-3 font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none" placeholder="http(s)://www.website.com/" value={weblink} onChange={(e) => { setWeblink(e.target.value);}} type="text" required/>
           <p className="text-slate-500 text-sm font-poppins">Add the link of your Website, TripAdvisor, Instagram or Facebook page</p>
         </div>
         <div className=' sm:flex block font-semibold py-2 mt-4 sm:space-x-2'>
           <div>
             <label>First name</label>
-            <input className="rounded-md p-3 mt-2 w-full font-semibold border-2 border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none" placeholder="John" value={firstName} onChange={(e) => { setFirstName(e.target.value);}} type="text" required/>
+            <input className="rounded-md p-3 mt-2 w-full font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none" placeholder="John" value={firstName} onChange={(e) => { setFirstName(e.target.value);}} type="text" required/>
           </div>
           <div>
             <label>Last name</label>
-            <input className="rounded-md p-3 mt-2 w-full font-semibold border-2 border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none" placeholder="Doe" value={lastName} onChange={(e) => { setLastName(e.target.value);}} type="text" required/>
+            <input className="rounded-md p-3 mt-2 w-full font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none" placeholder="Doe" value={lastName} onChange={(e) => { setLastName(e.target.value);}} type="text" required/>
           </div>
         </div>
 
@@ -166,7 +166,7 @@ const Signup = () => {
           <label>Email</label>
           <div className="relative flex">
             <input
-              className={`rounded-md p-3 w-full font-semibold border-2 border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none ${mynote && 'border-red-500'}`}
+              className={`rounded-md p-3 w-full font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none ${mynote && 'border-red-500'}`}
               placeholder="Enter your email"
               value={email}
               onChange={(e) => { setEmail(e.target.value); setMynote('');}}
@@ -181,7 +181,7 @@ const Signup = () => {
 
         <div className='flex flex-col font-semibold py-2 mt-4 space-y-2'>
             <label>Verification Code</label>
-            <input className='rounded-md p-3 mt-2 font-semibold border-2 border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none' placeholder="Enter Verificatin Code" value={code} onChange={handleCodeChange} type="text" required/>
+            <input className='rounded-md p-3 mt-2 font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none' placeholder="Enter Verificatin Code" value={code} onChange={handleCodeChange} type="text" required/>
         </div>
         {codeNote && <div className=' text-blue-600 text-sm font-semibold'>{codeNote}</div>}
     
@@ -189,7 +189,7 @@ const Signup = () => {
           <label>Password</label>
           <div className="relative mt-2">
             <input
-              className={`rounded-md p-3 w-full font-semibold border-2 border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none ${pwdnote && 'border-red-500'}`}
+              className={`rounded-md p-3 w-full font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none ${pwdnote && 'border-red-500'}`}
               placeholder="Enter your password"
               // value={password}
               onChange={handlePassword}

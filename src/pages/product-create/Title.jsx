@@ -57,7 +57,7 @@ const Title = () => {
             <div className="flex"><IconCross1 className="text-red-700 my-auto mr-2"/>unforgettable tour of rome</div>
           </div>
         </div>
-        <input className="rounded-md mt-4 p-3 font-semibold border-2 border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none w-full sm:w-2/3" placeholder="Title " onChange={handleShortChange} maxLength={60} type="text" required/>
+        <input className="rounded-md mt-4 p-3 font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none w-full sm:w-2/3" placeholder="Title " onChange={handleShortChange} maxLength={60} type="text" required/>
         <p className="mb-4 text-sm font-semibold">{shortCharacters} characters left</p>
         
         <div className="flex justify-end">

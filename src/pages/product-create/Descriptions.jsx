@@ -67,7 +67,7 @@ const Descriptions = () => {
         <div className="font-medium">
           <p>This is the customer’s first introduction to your activity. Aim to give customer a taste of what they’ll do in 2 or 3 sentences so they’ll want to learn more.</p>
         </div>
-        <textarea className="resize-y font-semibold w-full p-3 mt-4 rounded-md h-24 border border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none" placeholder="Short Description" onChange={handleShortChange} maxLength={200} required/>
+        <textarea className="resize-y font-semibold w-full p-3 mt-4 rounded-md h-24 border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none" placeholder="Short Description" onChange={handleShortChange} maxLength={200} required/>
         <p className="mb-4 text-sm font-semibold">{shortCharacters} characters left</p>
 
         <h2 className="mt-8 font-bold">Full description</h2>
@@ -75,7 +75,7 @@ const Descriptions = () => {
           <p>This is the main description customers will see about your activity. Include a summary of the main activity in the first paragraph. Focus on your main unique selling points here.</p>
           <p className="mt-4">Then, write the itinerary and/or main activity features. Finally, let customers know how the activity ends (e.g. do they get dropped off at the hotel? Are they in a central location to explore more?)</p>
         </div>
-        <textarea className="resize-y font-semibold w-full p-3 mt-4 rounded-md h-60 border border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none" placeholder="Full Description" onChange={handleFullChange} maxLength={3000} required/>
+        <textarea className="resize-y font-semibold w-full p-3 mt-4 rounded-md h-60 border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none" placeholder="Full Description" onChange={handleFullChange} maxLength={3000} required/>
         <p className="mb-4 text-sm font-semibold">{fullCharacters} characters left</p>
 
         <h2 className="mt-8 font-bold">Activity highlights</h2>
@@ -96,13 +96,13 @@ const Descriptions = () => {
             <div className="flex"><IconCross1 className="text-red-700 my-auto mr-2"/>Entrance tickets, local guide, and lunch</div>
           </div>
         </div>
-        <input className="rounded-md mt-4 p-3 font-semibold border-2 border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none w-full" placeholder="Highlights - 1" maxLength={80} onChange={handleHigh1Change} type="text" required/>
+        <input className="rounded-md mt-4 p-3 font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none w-full" placeholder="Highlights - 1" maxLength={80} onChange={handleHigh1Change} type="text" required/>
         <p className="mb-4 text-sm font-semibold">{high1} characters left</p>
         
-        <input className="rounded-md p-3 font-semibold border-2 border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none w-full" placeholder="Highlights - 2" maxLength={80} onChange={handleHigh2Change} type="text" required/>
+        <input className="rounded-md p-3 font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none w-full" placeholder="Highlights - 2" maxLength={80} onChange={handleHigh2Change} type="text" required/>
         <p className="mb-4 text-sm font-semibold">{high2} characters left</p>
         
-        <input className="rounded-md p-3 font-semibold border-2 border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none w-full" placeholder="Highlights - 3" maxLength={80} onChange={handleHigh3Change} type="text" required/>
+        <input className="rounded-md p-3 font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none w-full" placeholder="Highlights - 3" maxLength={80} onChange={handleHigh3Change} type="text" required/>
         {/* {
           high3 < 0?
         <p className="mb-4 text-red-600 text-sm font-semibold">{high3} characters left</p>

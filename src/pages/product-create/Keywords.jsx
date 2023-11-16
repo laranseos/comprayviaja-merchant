@@ -29,7 +29,7 @@ const Keywords = () => {
     <div className=" w-full p-4 sm:p-16">
         <h1 className="text-4xl font-bold">Keywords</h1>
         <h2 className="mt-8 font-bold mb-2">Add up to 15 keywords (optional)</h2>
-        <div className="font-semibold">
+        <div className="font-semibold mb-4">
           <p>What words would a customer use to search for your activity on our site? What makes it unique? Use all 15 keywords to help customers find your activity.</p>
           <p className="py-1">Keywords should answer questions like:</p>
           <p>• What is the overall theme of your activity? (River cruise? Wine tasting?)</p>
@@ -46,7 +46,7 @@ const Keywords = () => {
         />
         {
           isSubmit && selected.length ==0 &&
-          <p className="text-sm font-semibold text-red-600">Fill your keywords</p>
+          <p className="text-sm font-semibold text-red-600">Fill your keywords, press 'Enter'</p>
         }
         
         <div className="flex justify-end">

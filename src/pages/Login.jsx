@@ -31,10 +31,10 @@ const Login = () => {
 			dispatch(setCredentials({ ...res }));
 			console.log(res);
 			navigate('/');
-			toast.success('Logged in Successfully!', {autoClose: 1000, hideProgressBar: true, pauseOnHover: false, closeOnClick: true, theme: "dark",});
+			toast.success('Logged in Successfully!', {autoClose: 1000, hideProgressBar: true, pauseOnHover: false, closeOnClick: true});
 			closeSidebar();
 		  } catch (err) {
-			toast.error(err?.data?.message || err.error, {autoClose: 1000, hideProgressBar: true, pauseOnHover: false, closeOnClick: true, theme: "dark",});
+			toast.error(err?.data?.message || err.error, {autoClose: 1000, hideProgressBar: true, pauseOnHover: false, closeOnClick: true});
 	    }
 	  }
     const validateEmail = (email) => {
@@ -54,12 +54,12 @@ const Login = () => {
           <p className="font-bold text-2xl font-sans">Log in to the Supplier Portal</p>
           <div className='flex flex-col font-bold py-2 mt-4'>
             <label>Email</label>
-            <input className={`rounded-md p-2 mt-2 font-semibold border border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none ${mynote && 'border-red-500'}`} placeholder="Enter your email" value={myemail} onChange={(e) => { setMyemail(e.target.value); setMynote('');}} type="text" required/>
+            <input className={`rounded-md p-2 mt-2 font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none ${mynote && 'border-red-500'}`} placeholder="Enter your email" value={myemail} onChange={(e) => { setMyemail(e.target.value); setMynote('');}} type="text" required/>
           </div>
           {mynote && <div className=' text-red-600 text-sm font-semibold'>{mynote}</div>}
           <div className='flex flex-col font-bold py-2'>
             <label>Password</label>
-            <input className='rounded-md p-2 mt-2 font-semibold border border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none' placeholder="Enter your password" value={mypassword} onChange={(e) => setMypassword(e.target.value)} type="password" required/>
+            <input className='rounded-md p-2 mt-2 font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none' placeholder="Enter your password" value={mypassword} onChange={(e) => setMypassword(e.target.value)} type="password" required/>
           </div>
           <div className='flex justify-between text-gray-400'>
             <a className='text-blue-600 font-semibold cursor-pointer' onClick={()=>setForgot(true)}>Forgot Password?</a>

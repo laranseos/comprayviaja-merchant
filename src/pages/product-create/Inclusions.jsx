@@ -29,10 +29,15 @@ const Inclusions = () => {
     setExclusions(1000 - length);
   }
 
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate('/product-create/guideinfo');
+  };
+
   return (
     <div className=" w-full p-4 sm:p-16">
-      <form>
-
+      <form onSubmit={handleSubmit}>
         <h1 className="text-4xl font-bold">Inclusions & exclusions</h1>
         <div className="py-2 font-medium">
           <p>This is the main information that customers will use on your activity details page to read, compare, and book an activity.</p>
@@ -60,7 +65,7 @@ const Inclusions = () => {
             <div className="flex"><IconCross1 className="text-red-700 my-auto mr-2"/>hoto opportunities and an amazing time</div>
           </div>
         </div>
-        <textarea className="resize-y font-semibold w-full p-3 mt-4 rounded-md h-60 border border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none" placeholder="Main inclusions" onChange={handleInclusionsChange} maxLength={1000} required/>
+        <textarea className="resize-y font-semibold w-full p-3 mt-4 rounded-md h-60 border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none" placeholder="Main inclusions" onChange={handleInclusionsChange} maxLength={1000} required/>
         <p className="mb-4 text-sm font-semibold">{inclusions} characters left</p>
 
 
@@ -89,14 +94,11 @@ const Inclusions = () => {
             <div className="flex"><IconCross1 className="text-red-700 my-auto mr-2"/>Gratuities are not included, it is recommend to tip the guide 15-20% at the end of the tour.</div>
           </div>
         </div>
-        <textarea className="resize-y font-semibold w-full p-3 mt-4 rounded-md h-60 border border-slate-200 hover:border-blue-600 focus:border-blue-600 focus:outline-none" placeholder="If this does not apply to your activity, you can leave it blank." onChange={handleExclusionsChange} maxLength={1000}/>
+        <textarea className="resize-y font-semibold w-full p-3 mt-4 rounded-md h-60 border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none" placeholder="If this does not apply to your activity, you can leave it blank." onChange={handleExclusionsChange} maxLength={1000}/>
         <p className="mb-4 text-sm font-semibold">{exclusions} characters left</p>
-
-
-
         <div className="flex justify-end">
           <button className="outline-button my-8 mr-4" onClick={()=>navigate('/product-manage')}>Save & Exit</button> 
-          <button className="default-button my-8" onClick={()=>navigate('/product-create/location')}>Continue</button>
+          <button type="submit" className="default-button my-8 bg-blue-600">Continue</button>
         </div>
       </form>
     </div>

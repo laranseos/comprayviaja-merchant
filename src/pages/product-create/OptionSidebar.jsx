@@ -2,7 +2,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import IconCircleCheck from '../../components/icons/IconCircleCheck';
 import { useState, useEffect } from 'react';
 
-const CategorySidebar = () => {
+const OptionSidebar = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -68,4 +68,4 @@ const CategorySidebar = () => {
   )
 };
 
-export default CategorySidebar;
+export default OptionSidebar;

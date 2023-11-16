@@ -15,7 +15,6 @@ const BalanceReducer = (state, action) => {
    }
 }
 
-
 export const BalanceProvider = ({ children }) => {
 
    const [state, dispatch] = useReducer(BalanceReducer, initial_state);
