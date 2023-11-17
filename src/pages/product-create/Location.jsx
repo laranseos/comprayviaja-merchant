@@ -32,10 +32,11 @@ const Location = () => {
   }
 
     
-  const [locations, setLocations] = useState(60);
-  const handleLocation = (event) => {
-    const length = event.target.value.length;
-    setLocations(60 - length);
+  const [locations, setLocations] = useState("");
+  const handleLocations = (event) => {
+    // const length = event.target.value.length;
+    // setLocations(60 - length);
+    setLocations(event.target.value)
   }
 
   const handleSubmit = (event) => {
@@ -68,7 +69,7 @@ const Location = () => {
           </div>
         </div>
       
-        <input className="rounded-md mt-4 p-3 font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none w-full md:w-2/3" placeholder="Location" ref={locationRef}  type="text" required/>
+        <input className="rounded-md mt-4 p-3 font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none w-full md:w-2/3" placeholder="Location" value={locations} onChange={handleLocations} ref={locationRef}  type="text" required/>
         
         <div className="flex justify-end">
           <button className="outline-button my-8 mr-4" onClick={()=>navigate('/product-manage')}>Save & Exit</button> 

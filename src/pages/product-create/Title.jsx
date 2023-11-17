@@ -68,7 +68,7 @@ const Title = () => {
 
         <h2 className="mt-8">Product reference code</h2>
         <div className="py-2">
-          <p>To help you keep track of your products on GetYourGuide, add your own reference code or name.</p>
+          <p>To help you keep track of your products on Comprayviaja, add your own reference code or name.</p>
           <p>We’ll also assign our own code.</p>
         </div>
         <input className="rounded-md mt-4 p-3 border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none w-full sm:w-2/3" placeholder="Reference Code" onChange={handleReferenceCode} maxLength={20} type="text" required/>

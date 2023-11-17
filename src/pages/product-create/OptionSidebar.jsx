@@ -18,7 +18,7 @@ const OptionSidebar = () => {
       { title: 'Option setup', path: '/product-create/option/setup', isCheck: isTitle },
       { title: 'Meeting point & pickup  ', path: '/product-create/option/pickup', isCheck: isTitle },
       { title: 'Availability & Pricing', path: '/product-create/option/pricing', isCheck: isTitle },
-      { title: 'Review', path: '/product-create/option/review', isCheck: isTitle },
+      // { title: 'Review', path: '/product-create/option/review', isCheck: isTitle },
     ];
     setMenus(updatedMenus);
   }, [isTitle]);

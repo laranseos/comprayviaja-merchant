@@ -47,7 +47,7 @@ const AddInfo = () => {
           <p>• Tip: Avoid repeating structured tags in any longer written texts</p>
         </div>
 
-        <h2 className="my-4 text-2xl font-bold">Before booking with GetYourGuide</h2>
+        <h2 className="my-4 text-2xl font-bold">Before booking with Comprayviaja</h2>
         
         <div className="font-medium">
           <p className="font-bold">Who is this activity not suitable for? (optional)</p>

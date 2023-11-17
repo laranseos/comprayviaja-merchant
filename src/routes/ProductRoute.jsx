@@ -8,7 +8,7 @@ const ProductRoute = () => {
  
  const {option} = useContext(OptionContext);
  
- console.log('option', option);
+ console.log('my option', option);
  return (
     <div className="sm:flex">
       {option?

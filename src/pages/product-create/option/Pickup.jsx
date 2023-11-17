@@ -1,66 +1,107 @@
-import { useState } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useContext } from "react";
+import IconTick from "../../../components/icons/IconTick";
+import IconCross1 from "../../../components/icons/IconCross1";
 import { OptionContext } from "../../../context/optionContext";
 
 const Pickup = () => {
+
+  const autoCompleteRef = useRef();
+  const locationRef = useRef('')
+
+  const options = {
+    fields: ["address_components", "geometry", "icon", "name"],
+    types: ['point_of_interest', 'locality'],
+  };
+  useEffect(() => {
+    autoCompleteRef.current = new window.google.maps.places.Autocomplete(
+        locationRef.current,
+        options
+    );
+  }, []);
+
   const location = useLocation();
   const navigate = useNavigate();
   const {dispatch} = useContext(OptionContext);
-  const [guideInfo, setGuideInfo] = useState('nobody');
+  const [pickupOption, setPickupOption] = useState('');
+  const [isAddress, setIsAddress] = useState(false);
+
+  const [meetingDescription, setMeetingDescription] = useState(1000);
+  const handleMeetingDescriptionChange = (event) => {
+    const length = event.target.value.length;
+    setMeetingDescription(1000 - length);
+  }
+  
   const handleRadioChange = (event) => {
-    console.log(event.target.value);
-    setGuideInfo(event.target.value);
+    setPickupOption(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate('/product-create/addinfo');
+    navigate('/product-create/option/pricing');
   };
+
+  const [locations, setLocations] = useState("");
+  const handleLocations = (event) => {
+    setIsAddress(false);
+    setLocations(event.target.value)
+  }
 
   const handleSave = () => {
     dispatch({type:"SET_OPTION", payload:false});
     navigate('/product-create/options');
   }
 
+  const handleAddress = () => {
+    setLocations(locationRef.current.value);
+    setIsAddress(true);
+  }
+
   return (
     <div className=" w-full p-4 sm:p-16">
-      <form onSubmit={handleSubmit}>
-        <h1 className="text-4xl font-bold">Guide & activity info</h1>
-        <h2 className="mt-8 font-semibold mb-2">Who will your customers mainly interact with during your activity?</h2>
+
+        <h1 className="text-4xl font-bold">Meeting point and pickup</h1>
+        {/* <h2 className="mt-8 font-semibold mb-2">How do customers get to the activity?</h2>
         
         <div className="py-2 font-semibold">
-          <input type="radio" value="nobody" name="guide" id="nobody" className="mr-4" onChange={handleRadioChange} required/><label htmlFor="nobody" className="cursor-pointer">Nobody</label>
+          <input type="radio" value="nobody" name="guide" id="noservice" className="mr-4" onChange={handleRadioChange} required/><label htmlFor="noservice" className="cursor-pointer">They go to a set meeting point</label>
         </div>
         <div className="py-2 font-semibold">
-          <input type="radio" value="tourguide" name="guide" id="tourguide" className="mr-4" onChange={handleRadioChange}/><label htmlFor="tourguide" className="cursor-pointer">Tour guide</label>
-          <p className="ml-8">
-            <label className="text-sm text-slate-600 cursor-pointer" htmlFor="tourguide">Leads a group of customers through a tour and explains things about the destination/attraction.</label>
-          </p>
+          <input type="radio" value="tourguide" name="guide" id="service" className="mr-4" onChange={handleRadioChange}/><label htmlFor="service" className="cursor-pointer">They can choose where you pick them up from certain areas or a list of places</label>
+        </div> */}
+
+        <div className="font-semibold">
+          <h2 className="py-4">Meeting point</h2>
+          <p>Add meeting point Address</p>
+            
+          <input className="rounded-md mt-4 p-3 font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none w-full" placeholder="Location" value={locations} onChange={handleLocations} ref={locationRef}  type="text" required/>
+          
+          <button className="outline-button my-1" onClick={handleAddress}>Add address</button>
+          {isAddress && <div className="font-bold">{locations}</div>}
+
+          <div>
+            <h2 className="mt-8 font-semibold py-2">Describe the meeting point</h2>
+            <div className="font-medium">
+              <p>What should customers look for at the meeting point? Is there a specific landmark or place to meet? Be as specific as possible. Do not include information you already added elsewhere in the setup, such as the start time, address, or when customers should arrive.</p>
+            </div>
+            <div className="bg-slate-200 text-sm font-semibold mt-2 p-4 space-y-2">
+                <div>Examples</div>
+                <div className="flex"><IconTick className="text-green-700 my-auto mr-2"/>You must exchange your voucher at the ticket counter before the tour begins.</div>
+                <div className="flex"><IconTick className="text-green-700 my-auto mr-2"/>Look for “ABC Berlin Tours” under the arch.</div>
+                <div className="flex"><IconTick className="text-green-700 my-auto mr-2"/>Your guide will be wearing a red and white striped shirt.</div>
+            </div>
+            <textarea className="resize-y font-semibold w-full p-3 mt-4 rounded-md h-32 border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none" placeholder="Describe the meeting point here..." onChange={handleMeetingDescriptionChange} maxLength={1000}/>
+            <p className="mb-4 text-sm font-semibold">{meetingDescription} characters left</p>
+
+          </div>
+          
         </div>
-        <div className="py-2 font-semibold">
-          <input type="radio" value="host" name="guide" id="host" className="mr-4" onChange={handleRadioChange}/><label htmlFor="host" className="cursor-pointer">Host or greeter</label>
-          <p className="ml-8">
-            <label className="text-sm text-slate-600 cursor-pointer" htmlFor="host">Provides guidance in the form of purchasing a ticket and waiting in line with customers, but doesn't provide a full guided tour of the attraction. A greeter might give an introduction to an activity.</label>
-          </p>
-        </div>
-        <div className="py-2 font-semibold">
-          <input type="radio" value="instructor" name="guide" id="instructor" className="mr-4" onChange={handleRadioChange}/><label htmlFor="instructor" className="cursor-pointer">Instructor</label>
-          <p className="ml-8">
-            <label className="text-sm text-slate-600 cursor-pointer" htmlFor="instructor">Shows customers how to use equipment or teaches them how to do something</label>
-          </p>
-        </div>
-        <div className="py-2 font-semibold">
-          <input type="radio" value="driveronly" name="guide" id="driveronly" className="mr-4" onChange={handleRadioChange}/><label htmlFor="driveronly" className="cursor-pointer">Driver only</label>
-          <p className="ml-8">
-            <label className="text-sm text-slate-600 cursor-pointer" htmlFor="driveronly">Drives the customer somewhere but doesn’t explain anything along the way</label>
-          </p>
-        </div>
+
         <div className="flex justify-end">
           <button  className="outline-button my-8 mr-4" onClick={handleSave}>Save & Exit</button> 
-          <button type="submit" className="default-button bg-blue-600 my-8">Continue</button>
+          <button type="submit" className="default-button bg-blue-600 my-8" onClick={handleSubmit}>Continue</button>
         </div>
-      </form>
+
     </div>
   );
 };

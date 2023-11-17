@@ -28,7 +28,7 @@ export const OptionProvider = ({ children }) => {
     // Retrieve option from localStorage on component mount
     const savedOption = localStorage.getItem('option');
     if (savedOption) {
-      dispatch({ type: 'SET_OPTION', savedOption });
+      dispatch({ type: 'SET_OPTION', payload: savedOption });
     }
   }, []);
 
