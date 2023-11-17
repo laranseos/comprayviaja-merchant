@@ -72,7 +72,7 @@ const Location = () => {
         <input className="rounded-md mt-4 p-3 font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none w-full md:w-2/3" placeholder="Location" value={locations} onChange={handleLocations} ref={locationRef}  type="text" required/>
         
         <div className="flex justify-end">
-          <button className="outline-button my-8 mr-4" onClick={()=>navigate('/product-manage')}>Save & Exit</button> 
+          {/* <button className="outline-button my-8 mr-4" onClick={()=>navigate('/product-manage')}>Save & Exit</button>  */}
           <button type="submit" className="default-button my-8 bg-blue-600">Continue</button>
         </div>
       </form>

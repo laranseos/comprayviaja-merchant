@@ -298,7 +298,7 @@ const Photos = () => {
         }
 
         <div className="flex justify-end">
-          <button  className="outline-button my-8 mr-4" onClick={()=>navigate('/product-manage')}>Save & Exit</button> 
+          {/* <button  className="outline-button my-8 mr-4" onClick={()=>navigate('/product-manage')}>Save & Exit</button>  */}
           {(selectedImages.length>0 && isChecked)?<button type="submit" className="default-button bg-blue-600 my-8">Continue</button>:
           <button type="submit" className="default-button bg-gray-600 hover:bg-gray-600 my-8" disabled>Continue</button>}
         </div>

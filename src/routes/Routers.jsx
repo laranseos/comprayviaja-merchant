@@ -57,7 +57,7 @@ const Routers = () => {
             </Route>
             <Route path='/product-manage' element={<ProductManage />} />
           </Route>
-          {/* <Route path='*' element={<Navigate to="/" />} /> */}
+          <Route path='*' element={<Navigate to="/" />} />
         </Route>
       </Routes>
   );

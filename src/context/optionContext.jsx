@@ -19,17 +19,17 @@ export const OptionProvider = ({ children }) => {
 
    const [state, dispatch] = useReducer(OptionReducer, initial_state);
 
-   useEffect(() => {
-    // Save option to localStorage
-    localStorage.setItem('option', state.option);
-  }, [state.option]);
+//    useEffect(() => {
+//     // Save option to localStorage
+//     localStorage.setItem('option', state.option);
+//   }, [state.option]);
 
   useEffect(() => {
     // Retrieve option from localStorage on component mount
     const savedOption = localStorage.getItem('option');
-    if (savedOption) {
-      dispatch({ type: 'SET_OPTION', payload: savedOption });
-    }
+   //  if (savedOption) {
+   //    dispatch({ type: 'SET_OPTION', payload: savedOption });
+   //  }
   }, []);
 
    return <OptionContext.Provider value={{

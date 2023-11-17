@@ -43,7 +43,7 @@ const Pricing = () => {
             </div>
             <div>
               <p className="text-sm">Price per participant</p>
-              <input type="text" className="rounded-md p-2 font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none w-1/2" value={price*0.3} disabled/><span className="font-semibold ml-2 text-xl">USD</span>
+              <input type="text" className="rounded-md p-2 font-semibold border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none w-1/2" value={(price*0.3).toFixed(2)} disabled/><span className="font-semibold ml-2 text-xl">USD</span>
             </div>
 
           </div>

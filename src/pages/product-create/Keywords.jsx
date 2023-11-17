@@ -50,7 +50,7 @@ const Keywords = () => {
         }
         
         <div className="flex justify-end">
-          <button className="outline-button my-8 mr-4" onClick={()=>navigate('/product-manage')}>Save & Exit</button> 
+          {/* <button className="outline-button my-8 mr-4" onClick={()=>navigate('/product-manage')}>Save & Exit</button>  */}
           <button className="default-button my-8" onClick={handleContinue}>Continue</button>
         </div>
     </div>

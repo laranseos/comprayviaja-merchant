@@ -52,7 +52,7 @@ const GuideInfo = () => {
           </p>
         </div>
         <div className="flex justify-end">
-          <button  className="outline-button my-8 mr-4" onClick={()=>navigate('/product-manage')}>Save & Exit</button> 
+          {/* <button  className="outline-button my-8 mr-4" onClick={()=>navigate('/product-manage')}>Save & Exit</button>  */}
           <button type="submit" className="default-button bg-blue-600 my-8">Continue</button>
         </div>
       </form>

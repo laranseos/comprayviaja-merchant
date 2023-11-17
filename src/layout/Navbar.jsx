@@ -102,8 +102,8 @@ const Navbar = () => {
         <>
           <hr></hr>
           <div className='flex font-semibold py-2 space-x-8 text-lg px-4 sm:px-16'>
-            <div className={` cursor-pointer hover:text-blue-600 my-auto  ${toggleManage ? 'text-blue-600 underline underline-offset-4' : ''}`} onClick={handleMange}>Manage</div>
-            <div className={` cursor-pointer hover:text-blue-600 my-auto  ${toggleProduct ? 'text-blue-600 underline underline-offset-4' : ''}`} onClick={handleCreate}>Create</div>
+            {/* <div className={` cursor-pointer hover:text-blue-600 my-auto  ${toggleManage ? 'text-blue-600 underline underline-offset-4' : ''}`} onClick={handleMange}>Manage</div> */}
+            {/* <div className={` cursor-pointer hover:text-blue-600 my-auto  ${toggleProduct ? 'text-blue-600 underline underline-offset-4' : ''}`} onClick={handleCreate}>Create</div> */}
             <ul className="list-none flex justify-end items-center flex-1">
               <li className='rounded-full bg-blue-100 w-10 h-10 flex relative cursor-pointer' onClick={handleFirstLetterClick}>
                 <p className='m-auto'>{userInfo.firstName && userInfo.firstName.charAt(0).toUpperCase()}</p>
@@ -111,8 +111,8 @@ const Navbar = () => {
                 <IconClose /> */}
                 {showDropdown && (
                   <ul ref={dropdownRef} className="absolute py-2 px-4 space-y-2 right-0 top-full w-36 bg-slate-100 shadow rounded-md mt-1">
-                    <li className={` cursor-pointer hover:text-blue-600 my-auto  ${toggleManage ? 'text-blue-600 underline underline-offset-4' : ''}`} onClick={handleMange}>Manage</li>
-                    <li className={` cursor-pointer hover:text-blue-600 my-auto  ${toggleProduct ? 'text-blue-600 underline underline-offset-4' : ''}`} onClick={handleCreate}>Create</li>
+                    {/* <li className={` cursor-pointer hover:text-blue-600 my-auto  ${toggleManage ? 'text-blue-600 underline underline-offset-4' : ''}`} onClick={handleMange}>Manage</li> */}
+                    {/* <li className={` cursor-pointer hover:text-blue-600 my-auto  ${toggleProduct ? 'text-blue-600 underline underline-offset-4' : ''}`} onClick={handleCreate}>Create</li> */}
                     <li className=" cursor-pointer hover:bg-slate-200" onClick={logoutHandler}>
                       Sign Out
                     </li>

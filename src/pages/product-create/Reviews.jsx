@@ -15,7 +15,7 @@ const Reviews = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate('/product-manage');
+    // navigate('/product-manage');
   };
 
   return (

@@ -148,7 +148,7 @@ const AddInfo = () => {
         <textarea className="resize-y font-semibold w-full p-3 mt-4 rounded-md h-28 border border-slate-200 hover:border-blue-600 focus:border-green-600 focus:outline-none" placeholder="If this does not apply to your activity, you can leave it blank." onChange={handleBeforeActivityChange} maxLength={1000}/>
         <p className="mb-4 text-sm font-semibold">{beforeActivity} characters left</p>
         <div className="flex justify-end">
-          <button className="outline-button my-8 mr-4" onClick={()=>navigate('/product-manage')}>Save & Exit</button> 
+          {/* <button className="outline-button my-8 mr-4" onClick={()=>navigate('/product-manage')}>Save & Exit</button>  */}
           <button type="submit" className="default-button my-8 bg-blue-600">Continue</button>
         </div>
       </form>
